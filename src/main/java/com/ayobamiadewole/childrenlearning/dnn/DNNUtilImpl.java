@@ -21,14 +21,6 @@ public class DNNUtilImpl {
     
     
     public void loadData(){
-        MultiLayerConfiguration conf = 
-	new NeuralNetConfiguration.Builder()
-		.optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-		.updater(Updater.NESTEROVS).momentum(0.9)
-		.learningRate(learningRate)
-		.list(
-			new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes).activation("relu").build(),
-			new OutputLayer.Builder(LossFunction.NEGATIVELOGLIKELIHOOD).activation("softmax").nIn(numHiddenNodes).nOut(numOutputs).build()
-		).backprop(true).build();
+     
     }
 }
